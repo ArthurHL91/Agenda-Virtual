@@ -13,19 +13,24 @@
         }
         header{
             background-color: white;
-            padding: 10px;
-            margin: 10px;
+            padding: 20px;
+            margin: 20px;
+        }
+        h1{
+            color: #664A2F;
+            font-size: xx-large;
         }
         nav{
             background-color: #A6785D;
-            padding: 3px;
-            box-shadow: 1px 1px 1px #59551B;
+            padding: 5px;
+            box-shadow: 1px 1px 1px #0706003b;
         }
         nav > a{
             text-decoration: none;
             color: white;
             font-weight: bold;
-            margin-right: 50px;
+            margin-right: 70px;
+            font-size: 150%;  
         }
         nav > a:hover{
             text-decoration: underline;
@@ -41,6 +46,8 @@
             line-height: 2em;
             padding-left: 3%;
             padding-right: 3%;
+            background-attachment: fixed;
+            
         }
         #normal{
             background-color: #87888b;
@@ -53,10 +60,13 @@
             padding-bottom: 10%;
         }
         .img1{
-            background-image: url(Piscina.jpg);
+            background-image: url("Piscina.jpg");
+            background-size: cover;
+            
         }
         .img2{
-            background-image: url(Grama.jpg);
+            background-image: url("Grama.jpg");
+            background-size: cover;
         }
         article{
             background-color: white;
@@ -86,31 +96,37 @@
             text-align: center;
             padding-top: 5%;
             padding-bottom: 5%;
+
         }
         img {
             max-width: 100%;
             height: auto;
             
         }
-
+       
+        
     </style>
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+     
 </head>
 <body>
     <header>
-        <h1>Agenda Virtual Rancho Dona Bel</h1>
+        <h1>AGENDA VIRTUAL - RANCHO DONA BEL</h1>
         <nav>
-            <a href="#">Fotos</a>
-            <a href="#">Agenda</a>
-            <a href="#">Localização</a>
-            <a href="#">Contato</a>
-           
-
+            <a href="javascript:void(0);" onclick="navigateTo('.tit1')">Fotos</a>
+            <a href="javascript:void(0);" onclick="navigateTo('.tit2')">Agenda</a>
+            <a href="javascript:void(0);" onclick="navigateTo('.tit3')">Localização</a>
+            <a href="javascript:void(0);" onclick="navigateTo('.tit4')">Contato</a>
         </nav>
     </header>
     <main>
         <div class="image-container"><img src="logo.jpeg" alt="Logo"></div>
 
-        <section id="titulo">
+        <section class="tit1">
             <p>Fotos</p>
         </section>
         <section id="normal">
@@ -122,7 +138,7 @@
             </article>
         </section>
 
-        <section id="titulo">
+        <section class="tit2">
             <p>Agenda</p>
         </section>
         <section id="imagem" class="img1">
@@ -134,7 +150,7 @@
             </article>
         </section>
 
-        <section id="titulo">
+        <section class="tit3">
             <p>Localização</p>
         </section>
         <section id="normal">
@@ -146,7 +162,7 @@
             </article>
         </section>
 
-        <section id="titulo">
+        <section class="tit4">
             <p>Contato</p>
         </section>
         <section id="imagem" class="img2">
@@ -163,5 +179,14 @@
         <p>Desenvolvido pelo DRP13-PJI240-SALA-001GRUPO-009</p>
     </footer>
     
+    <script>
+        function navigateTo(className) {
+            const elements = document.querySelectorAll(className);
+            if (elements.length > 0) {
+                elements[0].scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
 </body>
 </html>

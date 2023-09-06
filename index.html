@@ -111,6 +111,10 @@
 
         }
 
+        #meuCarrossel {
+          height: 100vh; /* 100% da altura da viewport */
+        }
+
        
         :root {
   --primary-clr: #b38add;
@@ -764,38 +768,38 @@
                       <i class="fas fa-angle-right next"></i>
                     </div>
                     <div class="weekdays">
-                      <div>Sun</div>
-                      <div>Mon</div>
-                      <div>Tue</div>
-                      <div>Wed</div>
-                      <div>Thu</div>
-                      <div>Fri</div>
-                      <div>Sat</div>
+                      <div>Dom</div>
+                      <div>Seg</div>
+                      <div>Ter</div>
+                      <div>Qua</div>
+                      <div>Qui</div>
+                      <div>Sex</div>
+                      <div>Sab</div>
                     </div>
                     <div class="days"></div>
                     <div class="goto-today">
                       <div class="goto">
-                        <input type="text" placeholder="mm/yyyy" class="date-input" />
-                        <button class="goto-btn">Go</button>
+                        <input type="text" placeholder="__/____" class="date-input" />
+                        <button class="goto-btn">ir</button>
                       </div>
-                      <button class="today-btn">Today</button>
+                      <button class="today-btn">Hoje</button>
                     </div>
                   </div>
                 </div>
                 <div class="right">
                   <div class="today-date">
-                    <div class="event-day">wed</div>
+                    <div class="event-day">Qua</div>
                     <div class="event-date">12th december 2022</div>
                   </div>
                   <div class="events"></div>
                   <div class="add-event-wrapper">
                     <div class="add-event-header">
-                      <div class="title">Add Event</div>
+                      <div class="title">Adicionar Evento</div>
                       <i class="fas fa-times close"></i>
                     </div>
                     <div class="add-event-body">
                       <div class="add-event-input">
-                        <input type="text" placeholder="Event Name" class="event-name" />
+                        <input type="text" placeholder="Nome do Evento" class="event-name" />
                       </div>
                       <div class="add-event-input">
                         <input
@@ -813,7 +817,7 @@
                       </div>
                     </div>
                     <div class="add-event-footer">
-                      <button class="add-event-btn">Add Event</button>
+                      <button class="add-event-btn">Adicionar</button>
                     </div>
                   </div>
                 </div>
@@ -899,18 +903,18 @@ let month = today.getMonth();
 let year = today.getFullYear();
 
 const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  "Janeiro",
+  "Fevereiro",
+  "Março",
+  "Abril",
+  "Maio",
+  "Junho",
+  "Julho",
+  "Agosto",
+  "Setembro",
+  "Outubro",
+  "Novembro",
+  "Dezembro",
 ];
 
 // const eventsArr = [
@@ -1137,7 +1141,7 @@ function updateEvents(date) {
   });
   if (events === "") {
     events = `<div class="no-event">
-            <h3>No Events</h3>
+            <h3>Sem eventos para essa data</h3>
         </div>`;
   }
   eventsContainer.innerHTML = events;

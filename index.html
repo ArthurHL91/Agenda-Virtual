@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
+ <!DOCTYPE html>
+  <html>
+  <head>
+      <title>SQLite3 no HTML</title>
+  </head>
+  <body>
+      
+  <!--esther-->
+      
+      <!-- Script JavaScript para enviar solicitações ao servidor -->
+   <script>
+          document.getElementById('adicionarBotao').addEventListener('click', function () {
+              fetch('/adicionar', {
+                  method: 'POST',
+              })
+              .then(response => response.json())
+              .then(data => {
+                  alert(data.message);
+              })
+              .catch(error => {
+                  console.error('Erro:', error);
+              });
+          });
+      </script>
+  </body>
+  </html> 
+
+  
+
+  
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -582,7 +613,7 @@
   justify-content: center;
   padding: 20px;
 }
-.add-event-footer .add-event-btn {
+.add-event-footer .adicionarBotao {
   height: 40px;
   font-size: 1rem;
   font-weight: 500;
@@ -595,7 +626,7 @@
   padding: 5px 10px;
   border: 1px solid var(--primary-clr);
 }
-.add-event-footer .add-event-btn:hover {
+.add-event-footer .adicionarBotao:hover {
   background-color: transparent;
   color: var(--primary-clr);
 }
@@ -809,22 +840,17 @@
                         <input type="text" placeholder="Nome do Evento" class="event-name" />
                       </div>
                       <div class="add-event-input">
-                        <input
-                          type="text"
-                          placeholder="Event Time From"
-                          class="event-time-from"
+                        <input type="time" placeholder="Horario do inicio" class="time"
                         />
                       </div>
                       <div class="add-event-input">
                         <input
-                          type="text"
-                          placeholder="Event Time To"
-                          class="event-time-to"
+                          type="time" placeholder="Horatio do fim" class="time"
                         />
                       </div>
                     </div>
                     <div class="add-event-footer">
-                      <button class="add-event-btn">Adicionar</button>
+                      <button class="adicionarBotao">Adicionar</button>
                     </div>
                   </div>
                 </div>
@@ -906,7 +932,7 @@
   addEventTitle = document.querySelector(".event-name "),
   addEventFrom = document.querySelector(".event-time-from "),
   addEventTo = document.querySelector(".event-time-to "),
-  addEventSubmit = document.querySelector(".add-event-btn ");
+  addEventSubmit = document.querySelector(".adicionarBotao ");
 
 let today = new Date();
 let activeDay;

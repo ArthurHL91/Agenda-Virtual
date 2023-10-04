@@ -859,8 +859,9 @@
         <section id="normal">
             <article>
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam similique ad reiciendis obcaecati fuga tempore consequuntur voluptates nam laborum dolores odio natus quos minima nobis possimus quisquam eum, dolore ducimus.
+                  Localizada a apenas 4,5 km da cidade, o Rancho Dona Bel é de fácil acesso, tornando-a uma opção conveniente para escapar do agito da vida urbana. Com essa proximidade, você pode desfrutar da tranquilidade e beleza da natureza sem abrir mão da comodidade de estar perto de todas as comodidades da cidade. É o refúgio perfeito para relaxar e recarregar as energias, proporcionando uma experiência única em meio à natureza. 
                 </p>
+                <div id="map" style="height: 400px; width: 100%;"></div>
                
             </article>
         </section>
@@ -1383,10 +1384,28 @@ function convertTime(time) {
   return time;
 }
 
-
-        
+     
 
     </script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBznZq9BP0BJm9cEU2-QWdF4OQM3olg5XQ&callback=inicializarMapa" async defer></script>
+<script>
+    function inicializarMapa() {
+            var coordenadas = {lat: -22.698330605494572, lng: -51.080718084990885}; // Suas coordenadas
+            var mapa = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15, // Ajuste o nível de zoom conforme necessário
+                center: coordenadas
+            });
+            
+            // Adicione um marcador no local específico
+            var marcador = new google.maps.Marker({
+                position: coordenadas,
+                map: mapa,
+                title: 'Minha Localização'
+            });
+        }
     
+</script>
+
 </body>
 </html>

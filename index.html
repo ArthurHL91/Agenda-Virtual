@@ -146,7 +146,7 @@
         
             
         :root {
-  --primary-clr: #b38add;
+  --primary-clr: #7a4e2a;
 }
 * {
   margin: 0;
@@ -1243,7 +1243,7 @@ addEventSubmit.addEventListener("click", () => {
   const eventTimeFrom = addEventFrom.value;
   const eventTimeTo = addEventTo.value;
   if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
-    alert("Please fill all the fields");
+    alert("Por favor preencha os campos");
     return;
   }
 
@@ -1258,7 +1258,7 @@ addEventSubmit.addEventListener("click", () => {
     timeToArr[0] > 23 ||
     timeToArr[1] > 59
   ) {
-    alert("Invalid Time Format");
+    alert("formato da hora invalido");
     return;
   }
 

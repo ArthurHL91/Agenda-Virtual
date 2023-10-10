@@ -143,6 +143,10 @@
        .sr-only{
         background-color: #cacaca70;
        }
+
+       .label-custom-color {
+        color: #2e2e2e; /* Altere a cor para a cor desejada */
+      } 
         
             
         :root {
@@ -379,7 +383,7 @@
   color: var(--primary-clr);
 }
 .calendar .goto-today button:hover {
-  color: #fff;
+  color: #ebebeb;
   background-color: var(--primary-clr);
 }
 .calendar .goto-today .goto button {
@@ -682,6 +686,7 @@
   .right .today-date {
     padding: 20px;
   }
+  
 }
 /*
 .credits {
@@ -807,7 +812,7 @@
                     <div class="days"></div>
                     <div class="goto-today">
                       <div class="goto">
-                        <label for="dataEvento">Mês/Ano</label>
+                        <label for="dataEvento" class="label-custom-color">Mês/Ano</label>
                         <input type="text" id="dataEvento" class="date-input" spellcheck="false" data-ms-editor="true" placeholder="__/____">
                         <button class="goto-btn">ir</button>
                       </div>
@@ -828,15 +833,15 @@
                     </div>
                     <div class="add-event-body">
                       <div class="add-event-input">
-                        <label for="evento">Nome do Evento:</label>
+                        <label for="evento" class="label-custom-color">Descrição:</label>
                         <input type="text" id="evento" class="event-name" spellcheck="false" data-ms-editor="true" placeholder="Nome do Evento">
                       </div>
                       <div class="add-event-input">
-                        <label for="horarioInicio">Horário de Início:</label>
+                        <label for="horarioInicio" class="label-custom-color">Início:</label>
                         <input type="time" id="horarioInicio" placeholder="Horário do Início" class="time" />
                       </div>
                       <div class="add-event-input">
-                        <label for="horarioFim">Horário de Fim:</label>
+                        <label for="horarioFim" class="label-custom-color">Fim:</label>
                         <input type="time" id="horarioFim" class="time" placeholder="Horário do Fim">
 
                       </div>
@@ -846,7 +851,7 @@
                     </div>
                   </div>
                 </div>
-                <button class="add-event">
+                <button class="add-event" aria-label="Fechar">
                   <i class="fas fa-plus"></i>
                 </button>
               </div>

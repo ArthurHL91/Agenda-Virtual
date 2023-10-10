@@ -829,16 +829,16 @@
                     <div class="add-event-body">
                       <div class="add-event-input">
                         <label for="evento">Nome do Evento:</label>
-                        <input type="text" placeholder="Nome do Evento" class="event-name" />
+                        <input type="text" id="evento" class="event-name" spellcheck="false" data-ms-editor="true" placeholder="Nome do Evento">
                       </div>
                       <div class="add-event-input">
                         <label for="horarioInicio">Horário de Início:</label>
                         <input type="time" id="horarioInicio" placeholder="Horário do Início" class="time" />
                       </div>
                       <div class="add-event-input">
-                        <input
-                          type="time" placeholder="Horário do fim" class="time"
-                        />
+                        <label for="horarioFim">Horário de Fim:</label>
+                        <input type="time" id="horarioFim" class="time" placeholder="Horário do Fim">
+
                       </div>
                     </div>
                     <div class="add-event-footer">

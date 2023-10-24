@@ -789,7 +789,8 @@
                     <div class="days"></div>
                     <div class="goto-today">
                       <div class="goto">
-                        <input type="text" placeholder="mês/ano" class="date-input" />
+                        <label for="dataEvento" class="label-custom-color">Mês/Ano</label>
+                        <input type="text" id="dataEvento" class="date-input" spellcheck="false" data-ms-editor="true" placeholder="__/____">
                         <button class="goto-btn">ir</button>
                       </div>
                       <button class="today-btn">Hoje</button>
@@ -845,9 +846,10 @@
         <section id="normal">
             <article>
                 <p>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29454.67404868591!2d-51.11157793328347!3d-22.659967469002826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9494946d2dc4e193%3A0x2ad94eb4a220924a!2zSWVww6osIFNQLCAxOTY0MC0wMDA!5e0!3m2!1spt-BR!2sbr!4v1698168508344!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  Localizada a apenas 4,5 km da cidade, o Rancho Dona Bel é de fácil acesso, tornando-a uma opção conveniente para escapar do agito da vida urbana. Com essa proximidade, você pode desfrutar da tranquilidade e beleza da natureza sem abrir mão da comodidade de estar perto de todas as comodidades da cidade. É o refúgio perfeito para relaxar e recarregar as energias, proporcionando uma experiência única em meio à natureza.                 
                 </p>
-               
+                <div id="map" style="height: 400px; width: 100%;"></div>
+
             </article>
         </section>
 
@@ -1229,7 +1231,7 @@ addEventSubmit.addEventListener("click", () => {
   const eventTimeFrom = addEventFrom.value;
   const eventTimeTo = addEventTo.value;
   if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
-    alert("Please fill all the fields");
+    alert("Por favor preencha os campos");
     return;
   }
 
@@ -1244,7 +1246,7 @@ addEventSubmit.addEventListener("click", () => {
     timeToArr[0] > 23 ||
     timeToArr[1] > 59
   ) {
-    alert("Invalid Time Format");
+    alert("Formato da hora invalido");
     return;
   }
 
@@ -1373,6 +1375,24 @@ function convertTime(time) {
         
 
     </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBznZq9BP0BJm9cEU2-QWdF4OQM3olg5XQ&callback=inicializarMapa" async defer></script>
+<script>
+    function inicializarMapa() {
+            var coordenadas = {lat: -22.698330605494572, lng: -51.080718084990885}; // Suas coordenadas
+            var mapa = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15, // Ajuste o nível de zoom conforme necessário
+                center: coordenadas
+            });
+            
+            // Adicione um marcador no local específico
+            var marcador = new google.maps.Marker({
+                position: coordenadas,
+                map: mapa,
+                title: 'Minha Localização'
+            });
+        }
+    
+</script>   
     
 </body>
 </html>
